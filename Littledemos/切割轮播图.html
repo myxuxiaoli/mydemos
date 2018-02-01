@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::before,
+        .clearfix:after {
+            content: "";
+            display: block;
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .view {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+
+        ul {
+
+            list-style: none;
+        }
+
+        ul li {
+            float: left;
+            width: 120px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        ul li span {
+            position: absolute;
+            width: 100%;
+            height: 400px;
+            top: 0;
+        }
+
+
+        ul li span:nth-child(1) {
+            transform: translateZ(200px);
+            background-image: url('images/1.jpg');
+        }
+
+        ul li span:nth-child(2) {
+            transform: translateY(-200px) rotateX(90deg);
+            background-image: url('images/2.jpg');
+        }
+
+        ul li span:nth-child(3) {
+            transform: translateZ(-200px) rotateX(180deg);
+            background-image: url('images/3.jpg');
+        }
+
+        ul li span:nth-child(4) {
+            transform: translateY(200px) rotateX(270deg);
+            background-image: url('images/4.jpg');
+        }
+
+        ul li:nth-of-type(1) span {
+            background-position: 0 0;
+        }
+
+        ul li:nth-of-type(2) span {
+            background-position: -120px 0;
+        }
+
+        ul li:nth-of-type(3) span {
+            background-position: -240px 0;
+        }
+
+        ul li:nth-of-type(4) span {
+            background-position: -360px 0;
+        }
+
+        ul li:nth-of-type(5) span {
+            background-position: -480px 0;
+        }
+
+
+
+        .prev,
+        .next {
+            width: 60px;
+            height: 60px;
+            color: white;
+            position: absolute;
+            top: 200px;
+            margin-top: -30px;
+            background-color: rgba(0, 0, 0, .6);
+            line-height: 60px;
+            text-align: center;
+            font: 40px consolas;
+            cursor: pointer;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="view">
+        <ul class="clearfix">
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+        <span class="prev">&lt;</span>
+        <span class="next">&gt;</span>
+    </div>
+
+</body>
+
+</html>
+<script src="lib/jquery-1.12.4.min.js"></script>
+<script>
+    var count = 0;
+    var flag = true;
+    var x;
+    // 右键的点击事件：
+    $('.next').on('click', function () {
+        x = 0;
+        nextImg(x);
+    });
+
+    // 左键的点击事件：
+    $('.prev').on('click', function () {
+        x = 1;
+        nextImg(x);
+    });
+
+
+    // 设置自动轮播
+    var timerId = setInterval(function () {
+        x = 0;
+        nextImg(x);
+    }, 2000);
+
+    // 鼠标移入事件(移入的时候自动轮播会停止)：
+    $('.view').hover(function () {
+        clearInterval(timerId);
+    }, function () {
+        timerId = setInterval(function () {
+            nextImg(x);
+        }, 2000);
+    })
+
+    // 点击事件的函数封装：
+    function nextImg(x) {
+        if (flag) {
+            flag = false;
+            if (x == 0) {
+                count++;
+            }
+            if (x == 1) {
+                count--;
+            }
+
+            $('li').each(function (index) {
+                $(this).css({
+                    'transform': 'rotateX(' + -90 * count + 'deg)',
+                    'transition-delay': (index * 0.2) + 's'
+                })
+            });
+            setTimeout(function () {
+                flag = true;
+            }, 1000);
+        }
+    }
+
+</script>

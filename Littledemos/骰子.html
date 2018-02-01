@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            perspective: 1200px;
+        }
+
+        .touzi {
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 5s;
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {}
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .touzi>div {
+            text-align: center;
+            font-size: 150px;
+            line-height: 300px;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        .dot {
+            width: 50px;
+            height: 50px;
+            background-color: #000000;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .one {
+            transform: translateZ(150px);
+        }
+
+        .one .dot.dot1 {
+            left: 125px;
+            top: 125px;
+        }
+
+
+
+        .two {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .two .dot.dot1 {
+            top: 50px;
+            left: 125px;
+        }
+
+        .two .dot.dot2 {
+            top: 200px;
+            left: 125px;
+        }
+
+
+
+
+        .three {
+            transform: rotateY(-180deg) translateZ(150px);
+        }
+
+        .three .dot.dot1 {
+            left: 25px;
+            top: 25px;
+        }
+
+        .three .dot.dot2 {
+            left: 125px;
+            top: 125px;
+        }
+
+        .three .dot.dot3 {
+            left: 225px;
+            top: 225px;
+        }
+
+
+
+        .four {
+            transform: rotateY(-270deg) translateZ(150px);
+        }
+
+        .four .dot.dot1 {
+            top: 50px;
+            left: 50px;
+        }
+
+        .four .dot.dot2 {
+            top: 50px;
+            left: 200px;
+        }
+
+        .four .dot.dot3 {
+            top: 200px;
+            left: 50px;
+        }
+
+        .four .dot.dot4 {
+            top: 200px;
+            left: 200px;
+        }
+
+
+
+
+        .five {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        .five .dot.dot1 {
+            top: 50px;
+            left: 50px;
+        }
+
+        .five .dot.dot2 {
+            top: 50px;
+            left: 200px;
+        }
+
+        .five .dot.dot3 {
+            top: 200px;
+            left: 50px;
+        }
+
+        .five .dot.dot4 {
+            top: 200px;
+            left: 200px;
+        }
+
+        .five .dot.dot5 {
+            top: 125px;
+            left: 125px;
+        }
+
+
+
+        .six {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .six .dot.dot1 {
+            left: 50px;
+            top: 25px;
+        }
+
+        .six .dot.dot2 {
+            left: 50px;
+            top: 125px;
+        }
+
+        .six .dot.dot3 {
+            left: 50px;
+            top: 225px;
+        }
+
+        .six .dot.dot4 {
+            left: 200px;
+            top: 25px;
+        }
+
+        .six .dot.dot5 {
+            left: 200px;
+            top: 125px;
+        }
+
+        .six .dot.dot6 {
+            left: 200px;
+            top: 225px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="touzi">
+        <div class="one">
+            <div class="dot dot1"></div>
+        </div>
+        <div class="two">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+        </div>
+        <div class="three">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+        <div class="four">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+        </div>
+        <div class="five">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+            <div class="dot dot5"></div>
+        </div>
+        <div class="six">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+            <div class="dot dot5"></div>
+            <div class="dot dot6"></div>
+        </div>
+    </div>
+</body>
+
+</html>

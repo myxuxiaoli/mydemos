@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgs {
+            width: 400px;
+            height: 470px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            width: 400px;
+            height: 470px;
+            border: 1px solid black;
+            position: absolute;
+            right: 10px;
+            top: 0px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgs">
+        <img src="img/lofter_1_noval_icon_ (1).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (2).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (3).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (4).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (5).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (6).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (7).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (8).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (9).jpg" alt="" draggable="true">
+        <img src="img/lofter_1_noval_icon_ (10).jpg" alt="" draggable="true">
+    </div>
+
+    <div class="container"></div>
+</body>
+
+</html>
+<script>
+    var current;
+    // 用for循环得到所有的img元素：
+    var imgList = document.querySelectorAll('img');
+    for (var i = 0; i < imgList.length; i++) {
+        imgList[i].ondragstart = function () {
+            current = this;
+        }
+    }
+
+    document.querySelector('.container').ondragover = function (event) {
+        event.preventDefault();
+    }
+    document.querySelector('.container').ondrop = function () {
+        this.appendChild(current);
+    }
+
+</script>

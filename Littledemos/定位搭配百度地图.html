@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=K8PVIR30Y44WuuAV1kwCxKr4pNmQSG9T"></script>
+</head>
+
+<body>
+    <div id="allmap"></div>
+
+</body>
+
+</html>
+<script>
+    navigator.geolocation.getCurrentPosition(function (loc) {
+        // 百度地图API功能（初始化地图对象）
+        var map = new BMap.Map("allmap");
+        // 设置一个坐标点，第一个参数是经度，第二个参数是纬度
+        var point = new BMap.point(loc.coords.longitude, loc.coords.latitude);
+        // 把刚刚设置的坐标定为地图的中心点，并且设置显示的精度，最大精度是19
+        map.centerAndZoom(point, 12);
+        var marker = new BMap.marker(point);// 创建标注
+        map.addOverlay(marker); // 将标注添加到地图中
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+
+        // 创建地址解析器实例
+        var myGo = new BMap.Geocoder();
+        // 通过getPoint的方法可以让你传入一个地址，得到它的坐标
+        // 它会把坐标当作参数传递给这个方法的回调函数，不管成功与否都会调用，不成功的话，返回的参数point为空
+        myGo.getPoint("中粮商务公园", function (point) {
+            if (point) {
+                map.centerAndZoom(point, 19);
+                map.addOverlay(new BMap.Marker(point));
+            } else {
+                alert("您选择的地址没有解析到结果");
+            }
+
+        }, "深圳市");// 参数3设置默认城市
+    })
+
+</script>

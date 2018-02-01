@@ -1,0 +1,138 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>PCAS (Province City Area Selector ʡ���С���������ѡ��JS��װ��) Ver 2.01 ����ѹ�������� ��������/��Ȩ����:������(333)</title>
+
+<style>
+    a,
+    body,
+    select {
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    a,
+    pre {
+        color: #808080;
+    }
+
+    body {
+        background: #efefef;
+    }
+</style>
+
+
+
+<script language="javascript" src="PCASClass.js"></script>
+
+
+
+
+
+<br>
+
+
+
+<b>ʡ���С���������ѡ��ѹ����Ӧ��ʵ����ʾ:</b>
+<br>
+<br>
+
+
+
+
+
+<fieldset style="padding:5px;">
+
+    <legend>ʡ������</legend>
+
+    �����أ�
+    <select name="P1"></select>
+    <select name="C1"></select>
+    <br> ���ڵأ�
+
+    <select name="P2"></select>
+    <select name="C2"></select>
+    <br> �����أ�
+
+    <select name="P3"></select>
+    <select name="C3"></select>
+    <br>
+
+</fieldset>
+
+
+
+<br>
+<br>
+
+
+
+<fieldset style="padding:5px;">
+
+    <legend>ʡ�е�������</legend>
+
+    ������ �� ���أ�
+    <select name="province"></select>
+    <select name="city"></select>
+    <select name="area"></select>
+    <br> �� �� �� �� �أ�
+    <select name="province1"></select>
+    <select name="city1"></select>
+    <select name="area1"></select>
+    <br> �� �� �� �� �أ�
+    <select name="province2"></select>
+    <select name="city2"></select>
+    <select name="area2"></select>
+    <br>
+
+    <br> �ޡ���Ĭ�����ϣ�
+
+    <select name="province3"></select>
+    <select name="city3"></select>
+    <select name="area3"></select>
+    <br> Ĭ�����ϡ���ʡ��
+
+    <select name="province4"></select>
+    <select name="city4"></select>
+    <select name="area4"></select>
+    <br> Ĭ���ϡ�ʡ���У�
+
+    <select name="province5"></select>
+    <select name="city5"></select>
+    <select name="area5"></select>
+    <br> Ĭ �� ʡ �� ����
+    <select name="province6"></select>
+    <select name="city6"></select>
+    <select name="area6"></select>
+    <br>
+
+</fieldset>
+
+<script language="javascript" defer>
+    new PCAS("P1", "C1");
+
+    new PCAS("P2", "C2", "����ʡ");
+
+    new PCAS("P3", "C3", "����ʡ", "������");
+
+
+
+    new PCAS("province", "city", "area", "����ʡ", "�׳���", "����");
+
+    new PCAS("province1", "city1", "area1", "����ʡ", "������", "��̶��");
+
+    new PCAS("province2", "city2", "area2", "����ʡ", "������", "������");
+
+
+
+    new PCAS("province3", "city3", "area3");
+
+    new PCAS("province4", "city4", "area4", "����ʡ");
+
+    new PCAS("province5", "city5", "area5", "����ʡ", "������");
+
+    new PCAS("province6", "city6", "area6", "����ʡ", "������", "������");
+</script>
+
+<br>
+
+</body>

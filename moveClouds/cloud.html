@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Moving stars</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+        }
+
+        .wall {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        div#background {
+            background: black url('img/background1.png') repeat-x 5% 0%;
+        }
+
+        div#midground {
+            background: url('img/midground1.png')repeat 20% 0%;
+            z-index: 1;
+        }
+
+        div#foreground {
+            background: url('img/foreground1.png')repeat 35% 0%;
+            z-index: 2;
+        }
+
+        @-webkit-keyframes STAR-MOVE {
+            from {
+                background-position: 0% 0%
+            }
+            to {
+                background-position: 600% 0%
+            }
+        }
+
+        @keyframes STAR-MOVE {
+            from {
+                background-position: 0% 0%
+            }
+            to {
+                background-position: 600% 0%
+            }
+        }
+
+
+        div#background {
+            background: black url('img/background1.png') repeat-x 5% 0%;
+            background-size: cover;
+            -webkit-animation: STAR-MOVE 200s linear infinite;
+            -moz-animation: STAR-MOVE 200s linear infinite;
+            -ms-animation: STAR-MOVE 200s linear infinite;
+            animation: STAR-MOVE 200s linear infinite;
+        }
+
+        div#midground {
+            background: url('img/midground1.png')repeat 20% 0%;
+            z-index: 1;
+            -webkit-animation: STAR-MOVE 100s linear infinite;
+            -moz-animation: STAR-MOVE 100s linear infinite;
+            -ms-animation: STAR-MOVE 100s linear infinite;
+            animation: STAR-MOVE 100s linear infinite;
+        }
+
+        div#foreground {
+            background: url('img/foreground1.png')repeat 35% 0%;
+            z-index: 2;
+            -webkit-animation: STAR-MOVE 50s linear infinite;
+            -moz-animation: STAR-MOVE 50s linear infinite;
+            -ms-animation: STAR-MOVE 50s linear infinite;
+            animation: STAR-MOVE 50s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background" class="wall"></div>
+    <div id="midground" class="wall"></div>
+    <div id="foreground" class="wall"></div>
+</body>
+
+</html>

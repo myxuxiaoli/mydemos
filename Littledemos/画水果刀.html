@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .knife {
+            width: 500px;
+            height: 190px;
+            border: 1px solid black;
+            margin: 50px auto;
+            background-color: red;
+            border-bottom-left-radius: 190px;
+            position: relative;
+        }
+
+        .knife::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            position: absolute;
+            border-bottom-left-radius: 10px;
+            top: 0px;
+            right: 0px;
+        }
+
+        .knife::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 60px;
+            border-left: 1px solid black;
+            background-color: gray;
+            position: absolute;
+            top: -1px;
+            right: -151px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="knife"></div>
+</body>
+
+</html>
