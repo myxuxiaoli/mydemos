@@ -1,0 +1,4 @@
+安装全局weex
+npm install -g weex-toolkit
+创建项目
+weex init your_project_name
