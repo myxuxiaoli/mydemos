@@ -1,0 +1,257 @@
+@import './z.less'; //引用基础样式
+.reset(); //全局边框和背景
+body {
+    background-color: #f1f2f4;
+}
+
+.header {
+    height: 3rem;
+    width: 100%;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    a {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        float: left;
+        margin: 1rem 0rem 1rem 1rem;
+        background: url('../img/in@3x.png');
+        background-size: 100% 100%;
+    }
+    button {
+        font-size: 1rem;
+        float: right;
+        color: #3385ff;
+        line-height: 3rem;
+        background-color: transparent;
+        border: 0;
+        margin-right: 1rem;
+    }
+}
+
+
+/*页面打开时的动画——正在加载*/
+
+.modal_con {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 100;
+}
+
+.BeingLoaded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateX(-50%) translateY(-50%);
+    width: 7rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    padding-top: 2rem;
+    z-index: 101;
+}
+
+.BeingLoaded p {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #3498DB;
+    font-size: 0.8rem;
+}
+
+.sk-spinner-three-bounce.sk-spinner {
+    text-align: center
+}
+
+.sk-spinner-three-bounce div {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #3498DB;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.sk-spinner-three-bounce .sk-bounce1 {
+    -webkit-animation-delay: -.32s;
+    animation-delay: -.32s
+}
+
+.sk-spinner-three-bounce .sk-bounce2 {
+    -webkit-animation-delay: -.16s;
+    animation-delay: -.16s
+}
+
+@-webkit-keyframes sk-threeBounceDelay {
+    0%,
+    100%,
+    80% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes sk-threeBounceDelay {
+    0%,
+    100%,
+    80% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+//编辑与删除弹出框样式
+.mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 80%;
+    z-index: 10001;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+    overflow: hidden;
+    .content {
+        padding: 1.5rem;
+        text-align: center;
+        color: #1e1e1e;
+        font-size: 1rem;
+    }
+    .but {
+        display: flex;
+        border-top: 1px solid #e6e6e6;
+        button {
+            flex: 1;
+            border: 0;
+            background-color: #FFF;
+            color: #3385ff;
+            font-size: 1rem;
+            height: 3rem;
+            &:first-child {
+                border-right: 1px solid #e6e6e6;
+            }
+            &:active {
+                background-color: #c1c2c3;
+            }
+        }
+    }
+}
+
+//图片裁剪插件样式
+#clipView {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.clipBox {
+    position: absolute;
+    top: 3rem;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    background: #000;
+    overflow: hidden;
+}
+
+#image-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+#cover-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: move;
+    outline: rgba(0, 0, 0, 0.5) solid 10000px;
+    border: 1px solid #FFF;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.narrow {
+    position: absolute;
+    top: 1.3rem;
+    right: 2rem;
+    z-index: 10;
+}
+
+.narrow span {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-left: 1rem;
+}
+
+.narrow span:first-child {
+    background-image: url("../img/fd@2x.png");
+}
+
+.narrow span:last-child {
+    background-image: url("../img/jx@2x.png");
+}
+
+.head {
+    font-size: 2.4rem;
+    text-align: center;
+    background-color: #FFF;
+    color: #333333;
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+    position: relative;
+    .goBack {
+        position: absolute;
+        left: 0;
+        width: 6rem;
+        font-size: 3rem;
+        color: #323136;
+    }
+    .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 2rem;
+        font-size: 2rem;
+        color: #323136;
+        height: 6rem;
+        line-height: 6rem;
+    }
+}
